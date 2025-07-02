@@ -32,8 +32,10 @@
       line-height: 1.6;
     }
     .cake {
-      width: 200px;
+      width: 300px;
       margin: 30px auto;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
     .heart {
       font-size: 30px;
@@ -60,31 +62,80 @@
       z-index: 999;
       pointer-events: none;
     }
+    .spotify {
+      margin-top: 20px;
+    }
+    .letter-box {
+      width: 40px;
+      height: 40px;
+      background-color: #ffc0cb;
+      border-radius: 8px;
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
   </style>
 </head>
 <body>
   <canvas id="fireworks"></canvas>
   <div class="container">
     <h1>🎉 Happy Birthday, My Love! 🎉</h1>
-    <img src="https://cdn.pixabay.com/photo/2020/12/28/13/43/birthday-cake-5867097_960_720.png" alt="Birthday Cake" class="cake">
-    <h2>To the sweetest girl in the whole wide world 💖</h2>
+    <img src="Untitled design (71).png" alt="Birthday Graphic" class="cake">
+    <h2>Hey sweetheart, I hope you love the website! 💐💞🌺 <span class="heart">❤️❤️❤️</span></h2>
+
     <p>
-      On this beautiful day, I just want to remind you how incredibly special you are to me.
-      Your smile brightens up my days, your laugh is my favorite melody, and your heart is the most precious thing I've ever known.
-      I feel so lucky to walk through life with you by my side.
+      Tum se hi din hota hai,<br>
+      Tum se hi shaam aati hai...<br>
+      Tum se hi, tum se hi.<br>
+      Har ghadi saans aati hai,<br>
+      Zindagi kehlati hai — tum se hi.
     </p>
+
     <p>
-      May your birthday be filled with all the love, joy, and cake you deserve!
-      I promise to hold your hand through every storm, dance with you in every rain, and love you a little more every single day. 💫
+      Kuch toh hai tujhse raabta,<br>
+      Kaise hum jaane, humein kya pata...<br>
+      Pal bhar thaher jao,<br>
+      Dil yeh sambhal jaaye,<br>
+      Kaise tumhe roka karoon,<br>
+      Meri taraf aata har gham phisal jaaye.
     </p>
-    <p class="heart">❤️❤️❤️</p>
+
     <button onclick="startFireworks()">🎆 Start Fireworks</button>
     <button onclick="showMessage()">💌 Surprise Message</button>
+
+    <div id="wordle-game" style="margin: 40px auto; max-width: 400px;">
+      <p style="font-size: 22px; margin-bottom: 10px;">Guess what I'm trying to say... 💖</p>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+        <div class="letter-box" onclick="revealLetter(this, 'I')">💗</div>
+        <div class="letter-box" onclick="revealLetter(this, 'L')">💗</div>
+        <div class="letter-box" onclick="revealLetter(this, 'O')">💗</div>
+        <div class="letter-box" onclick="revealLetter(this, 'V')">💗</div>
+        <div class="letter-box" onclick="revealLetter(this, 'E')">💗</div>
+        <div class="letter-box" onclick="revealLetter(this, 'Y')">💗</div>
+        <div class="letter-box" onclick="revealLetter(this, 'O')">💗</div>
+        <div class="letter-box" onclick="revealLetter(this, 'U')">💗</div>
+      </div>
+    </div>
+
+    <div class="spotify">
+      <p>🎶 This one’s just for you:</p>
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3XgGQ1wjo5khvq2UImjyNF?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
   </div>
 
   <script>
     function showMessage() {
-      alert("You're the reason I believe in magic, love, and all things beautiful. Happy Birthday, my forever girl 💕");
+      alert("I love you my baby, my sweetheart, the love of my life, my wifey, my jaan 💌😾👩‍❤️‍💋‍👨");
+    }
+
+    function revealLetter(el, letter) {
+      el.innerHTML = letter;
+      el.style.backgroundColor = '#ff69b4';
     }
 
     const canvas = document.getElementById('fireworks');
